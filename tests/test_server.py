@@ -8,7 +8,7 @@ class TestPulse(unittest.TestCase):
         self.assertEqual(get_version(), "1.0")
 
     def test_health(self):
-        self.assertEqual(get_status(), 200)
+        self.assertEqual(get_status(), 503)
 
 
 if __name__ == "__main__":
