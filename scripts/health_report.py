@@ -14,15 +14,17 @@ for path in ("/health", "/version"):
     ms = round((perf_counter() - started) * 1000, 1)
     rows.append(f"| {path} | {status} | {body} | {ms} ms |")
 
-report = "\n".join([
-    "# Pulse API Health Report",
-    f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
-    "",
-    "| Endpoint | HTTP Status | Response | Latency |",
-    "|---|---:|---|---:|",
-    *rows,
-    "",
-])
+report = "\n".join(
+    [
+        "# Pulse API Health Report",
+        f"Generated UTC: {datetime.now(timezone.utc).isoformat()}",
+        "",
+        "| Endpoint | HTTP Status | Response | Latency |",
+        "|---|---:|---|---:|",
+        *rows,
+        "",
+    ]
+)
 
 Path("reports").mkdir(exist_ok=True)
 Path("reports/health-report.md").write_text(report, encoding="utf-8")
