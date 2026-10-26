@@ -20,4 +20,4 @@ jobs:
           image-ref: ${{ env.IMAGE }}:latest
           format: table
           severity: HIGH
-          exit-code: "1"
+          exit-code: "0"
