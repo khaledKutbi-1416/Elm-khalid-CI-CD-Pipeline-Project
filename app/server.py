@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 APP_VERSION = os.getenv("APP_VERSION", "1.0")
 
+
 def get_version():
     return APP_VERSION
 
@@ -39,4 +40,4 @@ class PulseHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    ThreadingHTTPServer(("0.0.0.0", 8000), PulseHandler).serve_forever()    
+    ThreadingHTTPServer(("0.0.0.0", 8000), PulseHandler).serve_forever()
